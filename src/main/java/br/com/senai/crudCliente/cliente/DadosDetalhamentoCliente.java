@@ -1,0 +1,21 @@
+package br.com.senai.crudCliente.cliente;
+
+public record DadosDetalhamentoCliente(
+        Long id,
+        String nome,
+        String email,
+        String cpf,
+        String telefone,
+        Boolean ativo
+) {
+    public DadosDetalhamentoCliente(Cliente cliente){
+        this(
+                cliente.getId(),
+                cliente.getNome(),
+                cliente.getEmail(),
+                cliente.getCpf(),
+                cliente.getTelefone(),
+                cliente.isAtivo()
+        );
+    }
+}
