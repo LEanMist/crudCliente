@@ -9,4 +9,7 @@ import java.util.Optional;
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     Page<Cliente> findAllByAtivoTrue(Pageable paginacao);
     Optional<Cliente> findByIdAndAtivoTrue(Long id);
+
+    boolean existsByEmail(String email);
+    boolean existsByCpf(String cpf);
 }
